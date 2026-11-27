@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jessica Martínez Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400..700;1,400..700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* Quiet luxury, mobile first: stone page, obsidian ink, brass accent. Bodoni Moda headlines, Jost text. */
+:root{
+  --bg:#ece8e1;--band:#f6f3ee;--ink:#17181c;--mute:#55565c;--line:#d2ccc0;
+  --brass:#b9975b;--brass-text:#7a5a26;--graphite:#2e3036;
+  --display:"Bodoni Moda",Georgia,"Times New Roman",serif;
+  --body:"Jost","Helvetica Neue",Arial,sans-serif;
+  color-scheme: light;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:18px;font-weight:300;line-height:1.55;-webkit-font-smoothing:antialiased}
+img{display:block;width:100%;height:auto}
+a{color:inherit}
+a:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:var(--display);font-weight:400;letter-spacing:-0.005em;text-wrap:balance;line-height:1.08}
+
+/* top bar: one row, nav scrolls sideways on a phone */
+.top{position:sticky;top:0;z-index:5;background:rgba(236,232,225,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:14px;padding-top:8px;padding-bottom:8px}
+nav{display:flex;gap:22px;overflow-x:auto;white-space:nowrap;font-size:16px;flex:1;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+nav::-webkit-scrollbar{display:none}
+nav a{text-decoration:none;color:var(--mute);padding:10px 0}
+.cta-s{order:2;flex:none;background:var(--ink);color:var(--bg);text-decoration:none;font-weight:500;font-size:16px;padding:10px 18px;border-radius:99px}
+
+/* hero */
+.hero{padding:36px 0 8px;display:grid;gap:32px}
+.hero h1{font-size:clamp(38px,10.5vw,64px);margin-bottom:18px;line-height:1.04}
+.hero p{font-size:19px;max-width:44ch}
+.hero .facts{margin-top:14px;font-size:16px;color:var(--mute)}
+.hero-btns{display:grid;gap:12px;margin-top:24px}
+.btn{display:block;text-align:center;text-decoration:none;font-weight:500;padding:15px 24px;border-radius:99px;background:var(--ink);color:var(--bg);font-size:17px}
+.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
+.arches{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.arch{margin:0}
+.arch img{aspect-ratio:4/5;object-fit:cover}
+.arch figcaption{font-size:14px;color:var(--mute);margin-top:6px}
+
+@media (prefers-reduced-motion:no-preference){
+  .arch{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+  .arch:nth-child(2){animation-delay:.12s}
+  .arch:nth-child(3){animation-delay:.24s}
+  .arch:nth-child(4){animation-delay:.36s}
+  @keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+}
+
+/* sections */
+section{padding:56px 0 8px}
+section.band{background:var(--band)}
+.head{margin-bottom:24px;max-width:62ch}
+.head h2{font-size:clamp(32px,8vw,48px);margin-bottom:10px}
+.lede{color:var(--mute);font-size:18px}
+.sub{font-family:var(--display);font-size:22px;margin:36px 0 12px;display:flex;flex-direction:column;gap:2px}
+.sub small{font-family:var(--body);font-weight:300;color:var(--mute);font-size:15px}
+
+figure{margin:0}
+figcaption{font-size:15px;color:var(--mute);margin-top:8px;line-height:1.4}
+figcaption b{color:var(--ink);font-weight:500}
+.tag{display:inline-block;font-size:12.5px;border:1px solid var(--brass-text);color:var(--brass-text);border-radius:99px;padding:0 9px;margin-left:6px;white-space:nowrap;font-weight:500}
+.grid{display:grid;gap:14px;grid-template-columns:repeat(2,1fr)}
+.g1{grid-template-columns:1fr}
+.crop img{aspect-ratio:4/5;object-fit:cover}
+.sq img{aspect-ratio:1/1;object-fit:cover}
+.tile img{object-fit:contain;background:#fff}
+.note{background:var(--ink);color:var(--bg);padding:20px;display:flex;flex-direction:column;justify-content:flex-end;min-height:200px}
+.note h3{font-size:24px;margin-bottom:8px}
+.note p{font-size:15px;color:#d6d1c8}
+.note .tag{border-color:var(--brass);color:var(--brass)}
+.pair{display:grid;gap:28px}
+.pair .lbl{font-family:var(--display);font-size:19px;margin-bottom:10px}
+.pair figure img{border:1px solid var(--line)}
+.wide{display:grid;gap:26px}
+.why{margin-top:28px;border-left:3px solid var(--brass);padding:4px 0 4px 18px;max-width:62ch}
+.why h3{font-size:22px;margin-bottom:8px}
+.why p{font-size:17.5px;color:var(--ink)}
+.why p+p{margin-top:6px}
+
+
+/* process */
+.steps{list-style:none;display:grid;gap:14px;counter-reset:s}
+.steps li{counter-increment:s;background:var(--band);border:1px solid var(--line);padding:20px 18px;font-weight:500;line-height:1.3;font-size:19px}
+section.band .steps li{background:#fff}
+.steps li::before{content:counter(s);display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--ink);color:var(--bg);font-size:16px;margin-bottom:12px}
+.steps li span{display:block;font-weight:300;color:var(--mute);font-size:16.5px;margin-top:8px;line-height:1.45}
+.about{display:grid;gap:36px;margin-top:44px}
+.about h3{font-size:26px;margin-bottom:14px}
+.about ul{list-style:none;display:grid;gap:12px}
+.about li{padding-bottom:12px;border-bottom:1px solid var(--line);font-weight:400}
+.about li span{color:var(--mute);display:block;font-size:16px;font-weight:300}
+
+/* contact */
+.contact{margin:64px 0 0;background:var(--ink);color:var(--bg);padding:56px 0 64px}
+.contact h2{font-size:clamp(34px,9vw,60px);margin-bottom:12px}
+.contact p{color:#d6d1c8;max-width:50ch}
+.contact .row{display:grid;gap:12px;margin:26px 0 20px}
+.contact .btn{background:var(--brass);color:var(--ink);font-size:18px}
+.contact .btn.mail{background:transparent;border:1.5px solid #ece8e1;color:#ece8e1;font-size:16px;overflow-wrap:anywhere}
+.contact .small{font-size:15px;color:#bdb8ae}
+footer{background:var(--ink);color:#b3aea5;padding:0 0 36px;font-size:14px}
+footer .wrap{border-top:1px solid #3a3c42;padding-top:18px}
+
+/* tablet and up */
+@media (min-width:700px){
+  .wrap{padding:0 32px}
+  nav{gap:26px}
+  .hero{grid-template-columns:1fr 1.3fr;gap:48px;align-items:center;padding-top:64px}
+  .hero-btns{display:flex}
+  .btn{display:inline-block}
+  .arches{grid-template-columns:repeat(4,1fr);align-items:end;gap:12px}
+  .arch img{aspect-ratio:3/5}
+  .arch:nth-child(2){margin-bottom:32px}
+  .arch:nth-child(4){margin-bottom:44px}
+  section{padding:84px 0 20px}
+  .sub{flex-direction:row;justify-content:space-between;align-items:baseline}
+  .g3{grid-template-columns:repeat(3,1fr)}
+  .g4{grid-template-columns:repeat(4,1fr)}
+  .g2{grid-template-columns:repeat(2,1fr)}
+  .g2d{grid-template-columns:repeat(2,1fr)}
+  .pair{grid-template-columns:1fr 1.2fr;gap:20px;align-items:start}
+  .steps{grid-template-columns:repeat(5,1fr)}
+  .about{grid-template-columns:1fr 1fr;gap:48px}
+  .contact{border-radius:28px 28px 0 0;padding:72px 0 84px}
+  .contact .row{display:flex}
+}
+@media (max-width:699px){.g2-m1{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <nav aria-label="Sections">
+      <a href="#case">Live listings</a>
+      <a href="#fashion">Fashion</a>
+      <a href="#beauty">Beauty and wellness</a>
+      <a href="#jewelry">Jewelry and products</a>
+      <a href="#process">Process</a>
+    </nav>
+    <a class="cta-s" href="https://wa.me/51986677437">WhatsApp</a>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap">
+    <div class="hero">
+      <div>
+        <h1>Product images for brands that <i>sell</i>.</h1>
+        <p>Main images, lifestyle scenes, infographics and detail shots for any category. I also run the e-commerce side behind them.</p>
+        <p class="facts">Marketing and Product Development Lead at Grupo Icatex, Lima, since 2014. 15+ years in product and e-commerce. Open to remote work worldwide.</p>
+        <div class="hero-btns">
+          <a class="btn" href="https://wa.me/51986677437">Message me</a>
+          <a class="btn ghost" href="#case">See the work</a>
+        </div>
+      </div>
+      <div class="arches">
+        <figure class="arch"><img src="images/terrace.jpg" alt="Man in an oversized grey tee and cream cargo pants walking on a terrace" width="600" height="1000"><figcaption>Menswear</figcaption></figure>
+        <figure class="arch"><img src="images/k8.jpg" alt="Girl in a grey tulle skirt blowing gold confetti" width="600" height="1000"><figcaption>Kids fashion</figcaption></figure>
+        <figure class="arch"><img src="images/lumina.jpg" alt="Serum bottle with a dropper over a wet stone slab" width="600" height="1000"><figcaption>Beauty</figcaption></figure>
+        <figure class="arch"><img src="images/ring20.jpg" alt="Silver signet ring with an emerald-cut stone on black rock" width="600" height="1000"><figcaption>Jewelry</figcaption></figure>
+      </div>
+    </div>
+  </div>
+
+  <section id="case">
+    <div class="wrap">
+      <div class="head">
+        <h2>Live on Falabella Marketplace</h2>
+        <p class="lede">Falabella Marketplace is one of the largest online marketplaces in Latin America, similar to Amazon for the region. These are images and listings I made for ANG Kidz, Ecobebé and Angela Kids at Grupo Icatex. The pages are public on Falabella.com.pe.</p>
+      </div>
+
+      <div class="pair">
+        <figure>
+          <div class="lbl">Before: the real garment in store</div>
+          <img src="images/store_bomber.jpg" alt="Pink bomber jacket with a fairy and rabbit print hanging in a shop" loading="lazy">
+          <figcaption>A phone photo of the real jacket.</figcaption>
+        </figure>
+        <figure>
+          <div class="lbl">After: the published image set</div>
+          <img src="images/live_bomber.jpg" alt="Product gallery of the bomber jacket on Falabella Marketplace with model, fabric and detail photos" loading="lazy">
+          <figcaption><b>Angela Kids bomber.</b> Model shots, collar detail and fabric close-up in one gallery. <span class="tag">AI-assisted</span></figcaption>
+        </figure>
+      </div>
+
+      <div class="why">
+        <h3>How I decided this set</h3>
+        <p>The real jacket was my reference. The model photos keep its print, its colors and its rib collar.</p>
+        <p>Online buyers cannot touch the fabric. So the gallery adds a collar detail and a fabric close-up.</p>
+      </div>
+
+      <div class="sub">More live listings <small>Grupo Icatex seller pages</small></div>
+      <div class="grid g1 g2d" style="align-items:start">
+        <figure><img src="images/live_ecobebe.jpg" alt="Falabella Marketplace gallery of an Ecobebé baby set with a Christmas tree background" loading="lazy"><figcaption><b>Ecobebé.</b> Christmas baby set, six-image gallery <span class="tag">AI-assisted</span></figcaption></figure>
+        <figure><img src="images/live_angela.jpg" alt="Falabella Marketplace catalog row of Angela Kids products with model images" loading="lazy"><figcaption><b>Angela Kids.</b> A catalog strip with one consistent look <span class="tag">AI-assisted</span></figcaption></figure>
+      </div>
+
+      <div class="sub">Angela Kids galleries <small>Scene and detail shots in each set</small></div>
+      <div class="wide">
+        <figure><img src="images/live_coat.jpg" alt="Navy hooded coat for girls: two lifestyle photos and a flat-lay of the front" loading="lazy"><figcaption><b>Hooded coat.</b> Lifestyle scenes plus a clean flat-lay for the buyer <span class="tag">AI-assisted</span></figcaption></figure>
+        <figure><img src="images/live_polo.jpg" alt="Mustard tee for girls: street photo, side view and a close-up of the mesh shoulder detail" loading="lazy"><figcaption><b>Mustard tee.</b> Street scene, side view and a fabric detail close-up <span class="tag">AI-assisted</span></figcaption></figure>
+      </div>
+    </div>
+  </section>
+  <section id="fashion" class="band">
+    <div class="wrap">
+      <div class="head">
+        <h2>Fashion</h2>
+        <p class="lede">Kids, baby and menswear. One light and one palette, so a full collection reads as one brand.</p>
+      </div>
+      <div class="grid g4 crop">
+        <figure><img src="images/k1.jpg" alt="Girl in a cream top and white jeans on a city street" loading="lazy"></figure>
+        <figure><img src="images/k3.jpg" alt="Girl in a striped tank top sitting on stone steps" loading="lazy"></figure>
+        <figure><img src="images/k8.jpg" alt="Girl in a grey tulle skirt blowing gold confetti" loading="lazy"></figure>
+        <figure><img src="images/k2.jpg" alt="Baby in a cream gingerbread-print set in front of a Christmas tree" loading="lazy"></figure>
+      </div>
+      <p class="lede" style="margin-top:10px;font-size:15px">Kids and baby <span class="tag">AI-assisted</span></p>
+      <div class="sub">Menswear <small>Catalog and street</small></div>
+      <div class="grid g2 crop">
+        <figure><img src="images/a4.jpg" alt="Man in a navy zip jacket and white tee against a white wall" loading="lazy"></figure>
+        <figure><img src="images/a10.jpg" alt="Man in a graphic tee and green cargo pants against a grey wall" loading="lazy"></figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="beauty">
+    <div class="wrap">
+      <div class="head">
+        <h2>Beauty and wellness</h2>
+        <p class="lede">Hero shots, scene series and creator-style posts. All brands here are invented.</p>
+      </div>
+      <div class="grid g3 crop">
+        <figure><img src="images/lumina.jpg" alt="Serum bottle with a dropper over a wet stone slab in warm light" loading="lazy"><figcaption><b>LUMINA.</b> Hero shot <span class="tag">AI</span></figcaption></figure>
+        <figure><img src="images/ugc22.jpg" alt="Creator-style vertical image of a woman at a bathroom mirror with caption text" loading="lazy"><figcaption><b>Short-video format.</b> Text on image <span class="tag">AI</span></figcaption></figure>
+        <figure><img src="images/ugc24.jpg" alt="Woman holding a small serum bottle in a bright bathroom" loading="lazy"><figcaption><b>Creator style.</b> Holding the product <span class="tag">AI</span></figcaption></figure>
+      </div>
+      <figure style="margin-top:18px"><img src="images/whey.jpg" alt="Four scenes of the same protein tub: kitchen, scoop, gym and cocoa" loading="lazy" style="border-radius:12px"><figcaption><b>RAW Whey Isolate.</b> One product, four scenes <span class="tag">AI</span></figcaption></figure>
+    </div>
+  </section>
+  <section id="jewelry" class="band">
+    <div class="wrap">
+      <div class="head">
+        <h2>Jewelry and small products</h2>
+        <p class="lede">Macro shots and clean main images for small, high-value items. Texture, edge and scale.</p>
+      </div>
+      <div class="grid g4 sq">
+        <figure><img src="images/ring20.jpg" alt="Silver signet ring with an emerald-cut stone on black rock" loading="lazy"><figcaption><b>Signet ring.</b> Invented brand <span class="tag">AI</span></figcaption></figure>
+        <figure><img src="images/ring25.jpg" alt="Brushed silver band on a grey wool sleeve beside a white shirt cuff" loading="lazy"><figcaption><b>Band ring.</b> Wool and cotton texture <span class="tag">AI</span></figcaption></figure>
+        <figure><img src="images/brace23.jpg" alt="Hand in a charcoal jacket sleeve wearing a silver chain bracelet" loading="lazy"><figcaption><b>Chain bracelet.</b> In use <span class="tag">AI</span></figcaption></figure>
+        <figure class="tile"><img src="images/main_esp.jpg" alt="Black espresso machine on a pure white background" loading="lazy"><figcaption><b>Espresso machine.</b> White-background main image <span class="tag">AI</span></figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="process">
+    <div class="wrap">
+      <div class="head">
+        <h2>How I work</h2>
+      </div>
+      <ol class="steps">
+        <li>Study the brand<span>Its story, its DNA, its fonts, colors and tone of voice.</span></li>
+        <li>Research the market<span>Competitors, buyers and what already sells in the category.</span></li>
+        <li>One project per brand<span>Each brand has its own AI project, so ideas never mix between brands.</span></li>
+        <li>Create the images<span>AI tools make the images, aligned with the brand and the market research.</span></li>
+        <li>Approve, then publish<span>Every image is reviewed and approved before it goes live.</span></li>
+      </ol>
+
+      <div class="about">
+        <div>
+          <h3>Background</h3>
+          <ul>
+            <li>Marketing and Product Development Lead<span>Grupo Icatex, Lima. Since 2014. ANG Kidz, Ecobebé, Angela Kids.</span></li>
+            <li>Stores and marketplaces<span>Shopify and Falabella Marketplace Seller Center.</span></li>
+            <li>Training<span>MBA, Centrum PUCP. Industrial Engineering, Universidad de Lima.</span></li>
+            <li>Languages<span>Spanish (native). English (working level).</span></li>
+          </ul>
+        </div>
+        <div>
+          <h3>About the images</h3>
+          <ul>
+            <li>AI work is labeled<span>Every AI-assisted image on this page is marked.</span></li>
+            <li>Concept brands are invented<span>LUMINA, RAW and the jewelry brands are not real companies.</span></li>
+            <li>Falabella Marketplace pages are real<span>They belong to Grupo Icatex and are public.</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="contact" id="contact">
+    <div class="wrap">
+      <h2>Let's talk about your products.</h2>
+      <p>Send me a product and the channel you sell on. I will tell you which images it needs.</p>
+      <div class="row">
+        <a class="btn" href="https://wa.me/51986677437">WhatsApp +51 986 677 437</a>
+        <a class="btn mail" href="mailto:chmartinez.jessica@gmail.com">chmartinez.jessica@gmail.com</a>
+      </div>
+      <p class="small">Jessica Martínez Chávez. <a href="https://www.linkedin.com/in/jessicagmartinez" style="text-underline-offset:3px">LinkedIn</a>. Lima, Peru (UTC−5).</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">Concept work uses invented brands. Images marked AI were made with AI tools. Falabella Marketplace pages shown belong to Grupo Icatex.</div>
+</footer>
+
+</body>
+</html>
